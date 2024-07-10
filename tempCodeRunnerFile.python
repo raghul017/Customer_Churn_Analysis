@@ -1,0 +1,39 @@
+# %%
+import pandas as pd 
+import numpy as np
+import seaborn as sns 
+import matplotlib.ticker as mtick  
+import matplotlib.pyplot as plt
+
+
+# %% [markdown]
+# Load the data file
+
+# %%
+telco_data = pd.read_csv('./Data/WA_Fn-UseC_-Telco-Customer-Churn.csv')
+
+# %% [markdown]
+# Look at the top 5 records of data
+
+# %%
+telco_data.head(5)
+
+# %%
+telco_data.shape
+
+# %%
+telco_data.columns.values
+
+# %%
+telco_data.dtypes
+
+# %%
+telco_data.describe()
+
+# %%
+telco_data['Churn'].value_counts().plot(kind='barh',figsize=(9,5)) # figsize=(width,height)
+plt.xlabel("Count",labelpad=20) #labelpad = specifies the padding between the axis label and the axis itself.
+plt.ylabel("Target Variable",labelpad=20)
+plt.title("Count of TARGET Variable per category",y=1.05);
+
+
